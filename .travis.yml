@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t ebzdag/react-test -f ./client/Dockerfile.dev ./complex-fib/client
+  - docker build -t ebzdag/react-test -f ./complex-fib/client/Dockerfile.dev ./complex-fib/client
 
 script:
   - docker run -e CI=true ebzdag/react-test npm test
