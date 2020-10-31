@@ -15,9 +15,9 @@ after_success:
   - docker build -t ebzdag/fib-nginx ./nginx
   - docker build -t ebzdag/fib-server ./server
   - docker build -t ebzdag/fib-worker ./worker
-  # Log in to the docker CLI
+
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take those images and push them to docker hub
+
   - docker push ebzdag/fib-client
   - docker push ebzdag/fib-nginx
   - docker push ebzdag/fib-server
