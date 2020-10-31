@@ -5,16 +5,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t ebzdag/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t ebzdag/react-test -f ./client/Dockerfile.dev ./complex-fib/client
 
 script:
   - docker run -e CI=true ebzdag/react-test npm test
 
 after_success:
-  - docker build -t ebzdag/fib-client ./client
-  - docker build -t ebzdag/fib-nginx ./nginx
-  - docker build -t ebzdag/fib-server ./server
-  - docker build -t ebzdag/fib-worker ./worker
+  - docker build -t ebzdag/fib-client ./complex-fib/client
+  - docker build -t ebzdag/fib-nginx ./complex-fib/nginx
+  - docker build -t ebzdag/fib-server ./complex-fib/server
+  - docker build -t ebzdag/fib-worker ./complex-fib/worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
