@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: client
-        image: fib-client
+        image: ebzdag/fib-client
         resources:
           limits:
             memory: "128Mi"
