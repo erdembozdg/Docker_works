@@ -1,8 +1,9 @@
 FROM python:3.8.2-slim-buster
+LABEL maintainer="Erdem Bozdag"
 
 RUN apt-get update && apt-get install -qq -y \
     build-essential libpq-dev --fix-missing --no-install-recommends
-
+    
 WORKDIR /app
 
 COPY requirements.txt requirements.txt 
