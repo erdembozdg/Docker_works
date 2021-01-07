@@ -1,4 +1,4 @@
-FROM python:3.8.2-slim-buster
+FROM python:rc-buster
 LABEL maintainer="Erdem Bozdag"
 
 RUN apt-get update && apt-get install -qq -y \
